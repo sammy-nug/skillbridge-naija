@@ -1,64 +1,112 @@
 "use client"
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import JobCard from '../../components/JobCard';
+import { Search, MapPin, Briefcase, Loader2 } from 'lucide-react';
 
 export default function JobsPage() {
-  const jobs = [
-    {
-      _id: 1,
-      title: 'Senior Frontend Developer',
-      recruiterName: 'Lagos Tech Hub',
-      description: 'We need an experienced React developer to lead our new Fintech product interface. Must be proficient in Next.js and Tailwind.',
-      requiredSkills: [{ name: 'React', level: 'Advanced' }, { name: 'Tailwind CSS', level: 'Intermediate' }],
-      location: 'Lagos',
-      type: 'Hybrid'
-    },
-    {
-      _id: 2,
-      title: 'Expert Welder (Gig)',
-      recruiterName: 'Chidi Motors',
-      description: 'Looking for a skilled welder for a 2-week contract to fix heavy duty trucks.',
-      requiredSkills: [{ name: 'Welding', level: 'Advanced' }],
-      location: 'Port Harcourt',
-      type: 'Onsite'
-    },
-    {
-      _id: 3,
-      title: 'Fashion Production Assistant',
-      recruiterName: 'Ngozi Tailoring',
-      description: 'Seeking a tailor with experience in Ankara and lace material production to assist in high-volume festive period sewing.',
-      requiredSkills: [{ name: 'Tailoring', level: 'Intermediate' }, { name: 'Fashion Design', level: 'Beginner' }],
-      location: 'Aba',
-      type: 'Onsite'
-    }
-  ];
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
+  const [location, setLocation] = useState('All Locations');
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        let url = '/api/jobs';
+        let config = {};
+        
+        if (token) {
+          url = '/api/jobs/recommendations';
+          config = { headers: { Authorization: `Bearer ${token}` } };
+        }
+
+        const res = await axios.get(url, config);
+        setJobs(res.data);
+      } catch (err) {
+        console.error('Error fetching jobs:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchJobs();
+  }, []);
+
+  const filteredJobs = jobs.filter(job => {
+    const matchesSearch = job.title.toLowerCase().includes(search.toLowerCase()) || 
+                          job.description.toLowerCase().includes(search.toLowerCase());
+    const matchesLocation = location === 'All Locations' || job.location === location;
+    return matchesSearch && matchesLocation;
+  });
 
   return (
-    <div className="py-12 bg-gray-50 min-h-screen">
+    <div className="py-16 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Find Jobs & Gigs</h1>
-          <p className="text-xl text-gray-600">Browse opportunities across Nigeria</p>
+        <div className="mb-12 text-center max-w-2xl mx-auto">
+          <h1 className="text-5xl font-black text-gray-900 mb-4 tracking-tight">Find Jobs & Gigs</h1>
+          <p className="text-xl text-gray-600 font-medium">Browse thousands of opportunities across Nigeria based on your skills.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <input type="text" placeholder="Search by skill, title, or company" className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 outline-none" />
-          <select className="px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-brand-500 outline-none">
-            <option>All Locations</option>
-            <option>Lagos</option>
-            <option>Abuja</option>
-            <option>Port Harcourt</option>
-            <option>Remote</option>
-          </select>
-          <button className="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-gray-800 transition-colors shadow-md">
+        <div className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100 mb-12 flex flex-col md:flex-row gap-4">
+          <div className="flex-1 relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <input 
+              type="text" 
+              placeholder="Search by skill, title, or keyword" 
+              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-medium" 
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          <div className="relative">
+            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <select 
+              className="pl-12 pr-10 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-bold text-gray-700 appearance-none min-w-[200px]"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            >
+              <option>All Locations</option>
+              <option>Lagos</option>
+              <option>Abuja</option>
+              <option>Port Harcourt</option>
+              <option>Ibadan</option>
+              <option>Remote</option>
+            </select>
+          </div>
+          <button className="bg-gray-900 text-white px-10 py-4 rounded-2xl font-black hover:bg-brand-600 transition-all shadow-xl shadow-gray-900/10 active:scale-95">
             Search
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {jobs.map(job => (
-            <JobCard key={job._id} job={job} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center py-20">
+            <Loader2 className="w-10 h-10 text-brand-600 animate-spin" />
+          </div>
+        ) : (
+          <div>
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-2xl font-black text-gray-900 tracking-tight">Latest Opportunities</h2>
+              <span className="bg-brand-50 text-brand-700 px-4 py-1.5 rounded-full text-sm font-black uppercase tracking-wider">{filteredJobs.length} Results Found</span>
+            </div>
+            
+            {filteredJobs.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredJobs.map(job => (
+                  <JobCard key={job._id} job={job} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-32 bg-white rounded-3xl border border-dashed border-gray-300 shadow-sm">
+                <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Briefcase className="w-10 h-10 text-gray-400" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">No jobs found</h3>
+                <p className="text-gray-500 font-medium">Try broadening your search or choosing a different location.</p>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

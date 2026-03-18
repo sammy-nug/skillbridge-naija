@@ -2,6 +2,7 @@
 import { useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
+import axios from 'axios';
 
 function RegisterForm() {
   const router = useRouter();
@@ -16,15 +17,33 @@ function RegisterForm() {
     location: ''
   });
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMsg('');
+
+    if (!validateEmail(formData.email)) {
+      setErrorMsg('Please enter a valid email address with an @ and a domain (e.g., info@domain.com)');
+      return;
+    }
+
     setLoading(true);
-    // TODO: implement real registration
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await axios.post('/api/auth/register', formData);
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('user', JSON.stringify(res.data));
       router.push('/dashboard');
-    }, 1000);
+    } catch (error) {
+      setErrorMsg(error.response?.data?.message || 'Registration failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => setFormData({...formData, [e.target.name]: e.target.value});
@@ -36,6 +55,12 @@ function RegisterForm() {
           <h2 className="text-3xl font-bold text-gray-900">Join SkillBridge</h2>
           <p className="text-gray-500 mt-2">Create your account to get started</p>
         </div>
+
+        {errorMsg && (
+          <div className="mb-6 bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100">
+            {errorMsg}
+          </div>
+        )}
 
         <div className="flex p-1 bg-gray-100 rounded-lg mb-6">
           <button 
@@ -72,10 +97,10 @@ function RegisterForm() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input name="password" type="password" required onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 outline-none" placeholder="••••••••" />
+            <input name="password" type="password" required minLength="6" onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 outline-none" placeholder="••••••••" />
           </div>
 
-          <button type="submit" disabled={loading} className="w-full bg-brand-600 mt-2 text-white font-bold py-3 rounded-lg hover:bg-brand-700 shadow-lg shadow-brand-500/30">
+          <button type="submit" disabled={loading} className="w-full bg-brand-600 mt-2 text-white font-bold py-3 rounded-lg hover:bg-brand-700 shadow-lg shadow-brand-500/30 disabled:opacity-70">
             {loading ? 'Processing...' : 'Create Account'}
           </button>
         </form>

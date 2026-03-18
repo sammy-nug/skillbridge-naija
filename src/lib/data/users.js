@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
 
 const users = [
+  // ADMINS
   {
     name: 'Admin Naija',
     email: 'admin@skillbridge.ng',
@@ -8,53 +9,54 @@ const users = [
     role: 'admin',
     location: 'Abuja'
   },
+
+  // RECRUITERS - TECH
   {
-    name: 'Chidi Motors & Welding',
-    email: 'chidi@motors.ng',
-    password: 'password123',
-    role: 'recruiter',
-    location: 'Port Harcourt'
-  },
-  {
-    name: 'Lagos Tech Hub',
-    email: 'hr@lagostech.ng',
+    name: 'PayStack HR',
+    email: 'hr@paystack.com',
     password: 'password123',
     role: 'recruiter',
     location: 'Lagos'
   },
   {
-    name: 'Ngozi Tailoring',
-    email: 'ngozi@tailor.ng',
+    name: 'Kuda Bank Recruitment',
+    email: 'careers@kudabank.com',
     password: 'password123',
     role: 'recruiter',
-    location: 'Aba'
+    location: 'Lagos'
   },
   {
-    name: 'Abuja Construction Group',
-    email: 'build@abujaconstruct.ng',
+    name: 'NITDA Abuja',
+    email: 'jobs@nitda.gov.ng',
+    password: 'password123',
+    role: 'recruiter',
+    location: 'Abuja'
+  },
+
+  // RECRUITERS - ARTISAN/CONSTRUCTION
+  {
+    name: 'Julius Berger Site Office',
+    email: 'site.manager@jb.ng',
     password: 'password123',
     role: 'recruiter',
     location: 'Abuja'
   },
   {
-    name: 'Creative Pulse Agency',
-    email: 'hello@creativepulse.ng',
+    name: 'Lekki Gardens Maintenance',
+    email: 'service@lekkigardens.com',
     password: 'password123',
     role: 'recruiter',
     location: 'Lagos'
   },
   {
-    name: 'Emeka Okafor',
-    email: 'emeka@gmail.com',
+    name: 'Aba Fashion Hub',
+    email: 'designs@abahub.ng',
     password: 'password123',
-    role: 'seeker',
-    skills: [
-      { name: 'Welding', level: 'Intermediate' },
-      { name: 'Auto Repair', level: 'Advanced' }
-    ],
-    experience: '5 years working at local garage',
-    location: 'Port Harcourt'
+    role: 'recruiter',
+    location: 'Aba'
   },
+
+  // SEEKERS - TECH
   {
     name: 'Aisha Bello',
     email: 'aisha@gmail.com',
@@ -65,32 +67,59 @@ const users = [
       { name: 'Node.js', level: 'Intermediate' },
       { name: 'Tailwind CSS', level: 'Advanced' }
     ],
-    experience: '3 years freelance web development',
+    experience: '3 years freelance web development in Yaba',
     location: 'Lagos'
   },
   {
-    name: 'Oluwaseun Adeleke',
-    email: 'olu.a@gmail.com',
+    name: 'Chinedu Okoro',
+    email: 'chinedu.o@gmail.com',
+    password: 'password123',
+    role: 'seeker',
+    skills: [
+      { name: 'Python', level: 'Advanced' },
+      { name: 'SQL', level: 'Advanced' },
+      { name: 'Power BI', level: 'Intermediate' }
+    ],
+    experience: 'Data analyst graduate from UNILAG',
+    location: 'Lagos'
+  },
+
+  // SEEKERS - ARTISAN
+  {
+    name: 'Sunday "Sunny" Plumber',
+    email: 'sunny.p@gmail.com',
+    password: 'password123',
+    role: 'seeker',
+    skills: [
+      { name: 'Plumbing', level: 'Advanced' },
+      { name: 'Maintenance', level: 'Advanced' }
+    ],
+    experience: '10 years experience as an independent plumber in Ikeja',
+    location: 'Lagos'
+  },
+  {
+    name: 'Blessing Tailor',
+    email: 'blessing.t@gmail.com',
     password: 'password123',
     role: 'seeker',
     skills: [
       { name: 'Tailoring', level: 'Advanced' },
-      { name: 'Fashion Design', level: 'Intermediate' }
+      { name: 'Pattern Making', level: 'Intermediate' }
     ],
-    experience: 'Owns a small shop making Ankara dresses',
-    location: 'Ibadan'
+    experience: 'Specialist in female native wear for 5 years',
+    location: 'Enugu'
   },
   {
-    name: 'Fatima Yusuf',
-    email: 'fatima.y@gmail.com',
+    name: 'Musa Solar Tech',
+    email: 'musa.s@gmail.com',
     password: 'password123',
     role: 'seeker',
     skills: [
-      { name: 'Plumbing', level: 'Intermediate' },
-      { name: 'Maintenance', level: 'Beginner' }
+      { name: 'Solar Installation', level: 'Advanced' },
+      { name: 'Electrical Wiring', level: 'Intermediate' }
     ],
-    experience: 'Apprenticeship at Lagos Works Department',
-    location: 'Lagos'
+    experience: 'Trained in renewable energy at BUK, Kano',
+    location: 'Abuja'
   }
 ];
 

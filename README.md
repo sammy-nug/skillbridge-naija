@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SkillBridge Naija 🚀
 
-## Getting Started
+SkillBridge Naija is a full-stack job and skill-matching platform focused on the Nigerian market. Traditional CVs don't always capture the true capabilities of artisans, freelancers, and techies. SkillBridge connects Job Seekers and Recruiters based on specific skill overlaps (formal and informal) to provide dynamic Match Scores.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🎓 Skill-Based Profiles:** Users can add formal and informal skills (e.g., React, Tailoring, Welding) with proficiency levels.
+- **🏢 Smart Match Algorithm:** Custom backend logic compares seeker skills against job required skills to generate a % Match Score.
+- **🇳🇬 Nigerian Context:** Seeded with local job data (Lagos, Abuja, Port Harcourt) for tech and artisan industries.
+- **🛡️ JWT Authentication:** Secure role-based access for Seekers, Recruiters, and Admins via Native Next.js API Routes.
+- **🎨 Modern UI/UX:** Built with Next.js App Router and a vibrant Tailwind CSS glassmorphism theme with smooth micro-animations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- Frontend: Next.js (React), Tailwind CSS, Framer Motion
+- Backend: Next.js Serverless API Routes (Node.js)
+- Database: MongoDB, Mongoose
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Setup Instructions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Local Development
+1. Clone the repository and navigate to `skillbridge-naija`.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up your `.env.local` file in the root directory:
+   ```env
+   MONGODB_URI=mongodb://localhost:27017/skillbridge_naija
+   JWT_SECRET=skillbridge_secret_123
+   ```
+4. Start the Next.js development server:
+   ```bash
+   npm run dev
+   ```
+5. To seed the database with sample Nigerian users and jobs, make a POST request to the seed route (e.g. using Postman, ThunderClient, or cURL):
+   ```bash
+   curl -X POST http://localhost:3000/api/seed
+   ```
+   *This automatically populates recruiters, techies, artisans, and jobs.*
 
-## Learn More
+### Vercel Deployment
+This unified platform is highly optimized for serverless deployments on Vercel.
+1. Push this repository to GitHub.
+2. Import the project in the Vercel Dashboard.
+3. In Project Settings -> Environment Variables, add `MONGODB_URI` (your MongoDB Atlas connection string) and `JWT_SECRET`.
+4. Deploy! It will build everything in one go. You can then trigger the `/api/seed` route on your production domain to populate data.
 
-To learn more about Next.js, take a look at the following resources:
+## Testing the Match Algorithm
+After seeding, log in dynamically using the mock UI or integrate real requests towards `/api/auth/login`. User `aisha@gmail.com` (password: `password123`) is set up as a tech job seeker.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Enjoy the smart way to hire in Naija!

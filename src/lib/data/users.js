@@ -30,6 +30,20 @@ const users = [
     location: 'Aba'
   },
   {
+    name: 'Abuja Construction Group',
+    email: 'build@abujaconstruct.ng',
+    password: 'password123',
+    role: 'recruiter',
+    location: 'Abuja'
+  },
+  {
+    name: 'Creative Pulse Agency',
+    email: 'hello@creativepulse.ng',
+    password: 'password123',
+    role: 'recruiter',
+    location: 'Lagos'
+  },
+  {
     name: 'Emeka Okafor',
     email: 'emeka@gmail.com',
     password: 'password123',
@@ -65,6 +79,18 @@ const users = [
     ],
     experience: 'Owns a small shop making Ankara dresses',
     location: 'Ibadan'
+  },
+  {
+    name: 'Fatima Yusuf',
+    email: 'fatima.y@gmail.com',
+    password: 'password123',
+    role: 'seeker',
+    skills: [
+      { name: 'Plumbing', level: 'Intermediate' },
+      { name: 'Maintenance', level: 'Beginner' }
+    ],
+    experience: 'Apprenticeship at Lagos Works Department',
+    location: 'Lagos'
   }
 ];
 

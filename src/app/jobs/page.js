@@ -71,6 +71,9 @@ export default function JobsPage() {
               <option>Abuja</option>
               <option>Port Harcourt</option>
               <option>Ibadan</option>
+              <option>Aba</option>
+              <option>Enugu</option>
+              <option>Kano</option>
               <option>Remote</option>
             </select>
           </div>
@@ -93,7 +96,7 @@ export default function JobsPage() {
             {filteredJobs.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredJobs.map(job => (
-                  <JobCard key={job._id} job={job} />
+                  <JobCard key={job._id} job={job} matchScore={job.matchScore} missingSkills={job.missingSkills} />
                 ))}
               </div>
             ) : (
@@ -101,7 +104,7 @@ export default function JobsPage() {
                 <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Briefcase className="w-10 h-10 text-gray-400" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">No jobs found</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">No jobs found matching "{search}"</h3>
                 <p className="text-gray-500 font-medium">Try broadening your search or choosing a different location.</p>
               </div>
             )}

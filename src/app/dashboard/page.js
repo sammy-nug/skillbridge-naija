@@ -12,6 +12,9 @@ export default function Dashboard() {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [newSkill, setNewSkill] = useState('');
+  const [newSkillLevel, setNewSkillLevel] = useState('Intermediate');
+  const [updatingSkills, setUpdatingSkills] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +53,64 @@ export default function Dashboard() {
 
     fetchData();
   }, [router]);
+
+  const handleAddSkill = async (e) => {
+    e.preventDefault();
+    if (!newSkill.trim()) return;
+
+    setUpdatingSkills(true);
+    try {
+      const token = localStorage.getItem('token');
+      const updatedSkills = [...(userData.skills || []), { name: newSkill.trim(), level: newSkillLevel }];
+      
+      const res = await axios.put('/api/auth/profile', 
+        { skills: updatedSkills },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      setUserData({ ...userData, skills: res.data.skills });
+      setNewSkill('');
+      
+      // Refresh recommendations
+      const recsRes = await axios.get('/api/jobs/recommendations', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setRecommendations(recsRes.data);
+    } catch (err) {
+      console.error('Error adding skill:', err);
+      alert('Failed to add skill. Please try again.');
+    } finally {
+      setUpdatingSkills(false);
+    }
+  };
+
+  const handleRemoveSkill = async (skillName) => {
+    if (!confirm(`Are you sure you want to remove ${skillName}?`)) return;
+
+    setUpdatingSkills(true);
+    try {
+      const token = localStorage.getItem('token');
+      const updatedSkills = userData.skills.filter(s => s.name !== skillName);
+      
+      const res = await axios.put('/api/auth/profile', 
+        { skills: updatedSkills },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      setUserData({ ...userData, skills: res.data.skills });
+      
+      // Refresh recommendations
+      const recsRes = await axios.get('/api/jobs/recommendations', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setRecommendations(recsRes.data);
+    } catch (err) {
+      console.error('Error removing skill:', err);
+      alert('Failed to remove skill. Please try again.');
+    } finally {
+      setUpdatingSkills(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -160,7 +221,13 @@ export default function Dashboard() {
                         {skill.level} Level
                       </div>
                     </div>
-                    <button className="text-red-400 font-bold hover:text-red-600 hover:bg-red-50 p-2 rounded-lg transition-all">Remove</button>
+                    <button 
+                      onClick={() => handleRemoveSkill(skill.name)}
+                      disabled={updatingSkills}
+                      className="text-red-400 font-bold hover:text-red-600 hover:bg-red-50 p-2 rounded-lg transition-all disabled:opacity-50"
+                    >
+                      Remove
+                    </button>
                   </div>
                 ))
               ) : (
@@ -168,12 +235,33 @@ export default function Dashboard() {
               )}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input type="text" placeholder="Add a skill (e.g. Welding, React)" className="flex-1 px-5 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 outline-none font-medium" />
-              <button className="bg-brand-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg shadow-brand-500/20 whitespace-nowrap">
-                Add Skill
+            <form onSubmit={handleAddSkill} className="flex flex-col sm:flex-row gap-4">
+              <input 
+                type="text" 
+                placeholder="Add a skill (e.g. Welding, React)" 
+                className="flex-1 px-5 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 outline-none font-medium" 
+                value={newSkill}
+                onChange={(e) => setNewSkill(e.target.value)}
+                disabled={updatingSkills}
+              />
+              <select 
+                className="px-5 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 outline-none font-bold text-gray-700 bg-white"
+                value={newSkillLevel}
+                onChange={(e) => setNewSkillLevel(e.target.value)}
+                disabled={updatingSkills}
+              >
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+              <button 
+                type="submit"
+                disabled={updatingSkills || !newSkill.trim()}
+                className="bg-brand-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg shadow-brand-500/20 whitespace-nowrap disabled:opacity-50"
+              >
+                {updatingSkills ? 'Adding...' : 'Add Skill'}
               </button>
-            </div>
+            </form>
           </div>
         )}
         

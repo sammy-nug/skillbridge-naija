@@ -170,6 +170,70 @@ const jobs = [
     ],
     location: 'Abuja',
     type: 'Onsite',
+  },
+  {
+    title: 'Hotel Front Office Manager',
+    description: 'A boutique luxury hotel in Asokoro seeks an experienced Front Office Manager. Must have excellent communication skills and experience with hotel management software.',
+    requiredSkills: [
+      { name: 'Hotel Management', level: 'Advanced' },
+      { name: 'Communication', level: 'Advanced' },
+      { name: 'Customer Service', level: 'Advanced' }
+    ],
+    location: 'Abuja',
+    type: 'Onsite',
+  },
+  {
+    title: 'Delivery Rider (Logistics)',
+    description: 'Fast-paced delivery company in Wuse 2 needs riders. Must have a valid bike license and good knowledge of Abuja routes.',
+    requiredSkills: [
+      { name: 'Motorcycle Riding', level: 'Advanced' },
+      { name: 'Navigating', level: 'Intermediate' }
+    ],
+    location: 'Abuja',
+    type: 'Onsite',
+  },
+  {
+    title: 'Administrative Assistant',
+    description: 'Legal firm in Maitama needs a detail-oriented admin assistant. Proficiency in Microsoft Office and document management is required.',
+    requiredSkills: [
+      { name: 'Microsoft Office', level: 'Advanced' },
+      { name: 'Data Entry', level: 'Advanced' },
+      { name: 'Organization', level: 'Advanced' }
+    ],
+    location: 'Abuja',
+    type: 'Onsite',
+  },
+  {
+    title: 'Primary School Teacher',
+    description: 'Leading private school in Gwarinpa is hiring. Must be passionate about early childhood education and have good classroom management.',
+    requiredSkills: [
+      { name: 'Teaching', level: 'Advanced' },
+      { name: 'Child Care', level: 'Advanced' },
+      { name: 'Classroom Management', level: 'Intermediate' }
+    ],
+    location: 'Abuja',
+    type: 'Onsite',
+  },
+  {
+    title: 'Digital Marketing Specialist',
+    description: 'Help an e-commerce brand based in Jabi grow their online presence. Knowledge of SEO, SEM, and social media ads is a plus.',
+    requiredSkills: [
+      { name: 'Digital Marketing', level: 'Advanced' },
+      { name: 'SEO', level: 'Intermediate' },
+      { name: 'Social Media Management', level: 'Advanced' }
+    ],
+    location: 'Abuja',
+    type: 'Remote',
+  },
+  {
+    title: 'Bakery Assistant',
+    description: 'Busy bakery in Lifecamp needs an assistant for bread and pastry production. Shift work required.',
+    requiredSkills: [
+      { name: 'Baking', level: 'Advanced' },
+      { name: 'Food Safety', level: 'Intermediate' }
+    ],
+    location: 'Abuja',
+    type: 'Onsite',
   }
 ];
 

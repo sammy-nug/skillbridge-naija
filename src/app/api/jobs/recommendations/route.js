@@ -13,7 +13,7 @@ export async function GET(req) {
     const user = await User.findById(authUser._id);
     if (!user) return NextResponse.json({ message: 'User not found' }, { status: 404 });
 
-    const jobs = await Job.find({}).populate('recruiterId', 'name');
+    const jobs = await Job.find({ location: 'Abuja' }).populate('recruiterId', 'name');
 
     const recommendedJobs = jobs.map(job => {
       let matchedSkills = 0;

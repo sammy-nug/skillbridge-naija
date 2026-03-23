@@ -10,7 +10,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative z-10 w-full line-height-relaxed">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-block bg-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-brand-200">
-            🚀 The smart way to find work in Nigeria
+            🚀 The smart way to find work in FCT Abuja
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight mb-8">
@@ -18,7 +18,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto line-clamp-3 leading-relaxed">
-            Say goodbye to traditional CVs. SkillBridge Naija connects artisans, tech talents, and freelancers directly with recruiters looking for what you can actually do.
+            Say goodbye to traditional CVs. SkillBridge Abuja connects artisans, tech talents, and freelancers directly with recruiters looking for what you can actually do in the capital.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

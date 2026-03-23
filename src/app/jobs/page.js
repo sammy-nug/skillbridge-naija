@@ -8,7 +8,7 @@ export default function JobsPage() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-  const [location, setLocation] = useState('All Locations');
+  const [location, setLocation] = useState('All Areas');
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -44,8 +44,8 @@ export default function JobsPage() {
     <div className="py-16 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center max-w-2xl mx-auto">
-          <h1 className="text-5xl font-black text-gray-900 mb-4 tracking-tight">Find Jobs & Gigs</h1>
-          <p className="text-xl text-gray-600 font-medium">Browse thousands of opportunities across Nigeria based on your skills.</p>
+          <h1 className="text-5xl font-black text-gray-900 mb-4 tracking-tight">Abuja Jobs & Gigs</h1>
+          <p className="text-xl text-gray-600 font-medium">Browse thousands of opportunities across FCT Abuja based on your skills.</p>
         </div>
 
         <div className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100 mb-12 flex flex-col md:flex-row gap-4">
@@ -66,14 +66,13 @@ export default function JobsPage() {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             >
-              <option>All Locations</option>
-              <option>Lagos</option>
-              <option>Abuja</option>
-              <option>Port Harcourt</option>
-              <option>Ibadan</option>
-              <option>Aba</option>
-              <option>Enugu</option>
-              <option>Kano</option>
+              <option>All Areas</option>
+              <option>Maitama</option>
+              <option>Wuse</option>
+              <option>Garki</option>
+              <option>Asokoro</option>
+              <option>Gwarinpa</option>
+              <option>Jabi</option>
               <option>Remote</option>
             </select>
           </div>

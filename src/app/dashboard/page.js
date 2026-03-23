@@ -148,7 +148,7 @@ export default function Dashboard() {
         {activeTab === 'skills' && (
           <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 max-w-3xl">
             <h2 className="text-3xl font-black text-gray-900 mb-2 tracking-tight">Manage Your Skills</h2>
-            <p className="text-gray-500 mb-10 font-medium">Adding more skills helps us find the best Nigerian job opportunities for you.</p>
+            <p className="text-gray-500 mb-10 font-medium">Adding more skills helps us find the best Abuja job opportunities for you.</p>
             
             <div className="space-y-4 mb-10">
               {userData?.skills?.length > 0 ? (

@@ -1,12 +1,12 @@
-# SkillBridge Naija 🚀
+# SkillBridge Abuja 🚀
 
-SkillBridge Naija is a full-stack job and skill-matching platform focused on the Nigerian market. Traditional CVs don't always capture the true capabilities of artisans, freelancers, and techies. SkillBridge connects Job Seekers and Recruiters based on specific skill overlaps (formal and informal) to provide dynamic Match Scores.
+SkillBridge Abuja is a full-stack job and skill-matching platform focused on the FCT Abuja market. Traditional CVs don't always capture the true capabilities of artisans, freelancers, and techies. SkillBridge connects Job Seekers and Recruiters in the capital based on specific skill overlaps (formal and informal) to provide dynamic Match Scores.
 
 ## Features
 
 - **🎓 Skill-Based Profiles:** Users can add formal and informal skills (e.g., React, Tailoring, Welding) with proficiency levels.
 - **🏢 Smart Match Algorithm:** Custom backend logic compares seeker skills against job required skills to generate a % Match Score.
-- **🇳🇬 Nigerian Context:** Seeded with local job data (Lagos, Abuja, Port Harcourt) for tech and artisan industries.
+- **🇳🇬 Abuja Context:** Seeded with local job data (Maitama, Wuse, Gwarinpa, etc.) for tech and artisan industries in the FCT.
 - **🛡️ JWT Authentication:** Secure role-based access for Seekers, Recruiters, and Admins via Native Next.js API Routes.
 - **🎨 Modern UI/UX:** Built with Next.js App Router and a vibrant Tailwind CSS glassmorphism theme with smooth micro-animations.
 
@@ -48,4 +48,4 @@ This unified platform is highly optimized for serverless deployments on Vercel.
 ## Testing the Match Algorithm
 After seeding, log in dynamically using the mock UI or integrate real requests towards `/api/auth/login`. User `aisha@gmail.com` (password: `password123`) is set up as a tech job seeker.
 
-Enjoy the smart way to hire in Naija!
+Enjoy the smart way to hire in Abuja!

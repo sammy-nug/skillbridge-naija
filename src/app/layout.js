@@ -2,8 +2,8 @@ import './globals.css';
 import Navbar from '../components/Navbar';
 
 export const metadata = {
-  title: 'SkillBridge Naija | Smart Job & Skill Matching',
-  description: 'Connect with jobs, gigs, and learning opportunities in Nigeria based on your actual skills.',
+  title: 'SkillBridge Abuja | Smart Job & Skill Matching',
+  description: 'Connect with jobs, gigs, and learning opportunities in FCT Abuja based on your actual skills.',
 };
 
 export default function RootLayout({ children }) {

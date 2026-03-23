@@ -16,14 +16,14 @@ const users = [
     email: 'hr@paystack.com',
     password: 'password123',
     role: 'recruiter',
-    location: 'Lagos'
+    location: 'Abuja'
   },
   {
     name: 'Kuda Bank Recruitment',
     email: 'careers@kudabank.com',
     password: 'password123',
     role: 'recruiter',
-    location: 'Lagos'
+    location: 'Abuja'
   },
   {
     name: 'NITDA Abuja',
@@ -42,18 +42,18 @@ const users = [
     location: 'Abuja'
   },
   {
-    name: 'Lekki Gardens Maintenance',
-    email: 'service@lekkigardens.com',
+    name: 'Citadel Maintenance',
+    email: 'service@citadel.com',
     password: 'password123',
     role: 'recruiter',
-    location: 'Lagos'
+    location: 'Abuja'
   },
   {
-    name: 'Aba Fashion Hub',
-    email: 'designs@abahub.ng',
+    name: 'Abuja Fashion Hub',
+    email: 'designs@abujahub.ng',
     password: 'password123',
     role: 'recruiter',
-    location: 'Aba'
+    location: 'Abuja'
   },
 
   // SEEKERS - TECH
@@ -67,8 +67,8 @@ const users = [
       { name: 'Node.js', level: 'Intermediate' },
       { name: 'Tailwind CSS', level: 'Advanced' }
     ],
-    experience: '3 years freelance web development in Yaba',
-    location: 'Lagos'
+    experience: '3 years freelance web development in Wuse',
+    location: 'Abuja'
   },
   {
     name: 'Chinedu Okoro',
@@ -80,8 +80,8 @@ const users = [
       { name: 'SQL', level: 'Advanced' },
       { name: 'Power BI', level: 'Intermediate' }
     ],
-    experience: 'Data analyst graduate from UNILAG',
-    location: 'Lagos'
+    experience: 'Data analyst graduate from University of Abuja',
+    location: 'Abuja'
   },
 
   // SEEKERS - ARTISAN
@@ -94,8 +94,8 @@ const users = [
       { name: 'Plumbing', level: 'Advanced' },
       { name: 'Maintenance', level: 'Advanced' }
     ],
-    experience: '10 years experience as an independent plumber in Ikeja',
-    location: 'Lagos'
+    experience: '10 years experience as an independent plumber in Garki',
+    location: 'Abuja'
   },
   {
     name: 'Blessing Tailor',
@@ -106,8 +106,8 @@ const users = [
       { name: 'Tailoring', level: 'Advanced' },
       { name: 'Pattern Making', level: 'Intermediate' }
     ],
-    experience: 'Specialist in female native wear for 5 years',
-    location: 'Enugu'
+    experience: 'Specialist in female native wear for 5 years in Maitama',
+    location: 'Abuja'
   },
   {
     name: 'Musa Solar Tech',
@@ -118,7 +118,7 @@ const users = [
       { name: 'Solar Installation', level: 'Advanced' },
       { name: 'Electrical Wiring', level: 'Intermediate' }
     ],
-    experience: 'Trained in renewable energy at BUK, Kano',
+    experience: 'Trained in renewable energy at University of Abuja',
     location: 'Abuja'
   }
 ];

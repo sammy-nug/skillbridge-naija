@@ -31,7 +31,7 @@ export async function POST(req) {
 
     await Job.insertMany(sampleJobs);
 
-    return NextResponse.json({ message: 'Database seeded successfully with Real-life Nigerian Context!' });
+    return NextResponse.json({ message: 'Database seeded successfully with Real-life Abuja Context!' });
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }

@@ -234,6 +234,168 @@ const jobs = [
     ],
     location: 'Lifecamp',
     type: 'Onsite',
+  },
+  {
+    title: 'Senior Project Manager (Construction)',
+    description: 'Leading construction firm in Abuja is looking for a Senior Project Manager for a massive estate development in Guzape. Must have PMP certification and 10+ years experience.',
+    requiredSkills: [
+      { name: 'Project Management', level: 'Advanced' },
+      { name: 'Construction Management', level: 'Advanced' },
+      { name: 'Budgeting', level: 'Advanced' }
+    ],
+    location: 'Guzape',
+    type: 'Onsite',
+  },
+  {
+    title: 'Executive Driver',
+    description: 'Private family in Maitama requires an executive driver. Must be well-spoken, have a valid license, and know Abuja very well.',
+    requiredSkills: [
+      { name: 'Driving', level: 'Advanced' },
+      { name: 'Communication', level: 'Intermediate' }
+    ],
+    location: 'Maitama',
+    type: 'Onsite',
+  },
+  {
+    title: 'Software Quality Assurance Engineer',
+    description: 'Fintech company in Wuse 2 needs a QA Engineer to handle automated and manual testing of our mobile app.',
+    requiredSkills: [
+      { name: 'Manual Testing', level: 'Advanced' },
+      { name: 'Automation', level: 'Intermediate' },
+      { name: 'Selenium', level: 'Intermediate' }
+    ],
+    location: 'Wuse 2',
+    type: 'Hybrid',
+  },
+  {
+    title: 'Chef de Partie',
+    description: 'Upscale restaurant in Garki 2 is hiring. Must be experienced in continental and local dishes. Hygiene standards are paramount.',
+    requiredSkills: [
+      { name: 'Cooking', level: 'Advanced' },
+      { name: 'Kitchen Management', level: 'Intermediate' },
+      { name: 'Food Safety', level: 'Advanced' }
+    ],
+    location: 'Garki 2',
+    type: 'Onsite',
+  },
+  {
+    title: 'Real Estate Sales Associate',
+    description: 'Join a busy real estate agency in Jabi. You will be responsible for listing properties and closing sales in the Abuja luxury market.',
+    requiredSkills: [
+      { name: 'Sales', level: 'Advanced' },
+      { name: 'Negotiation', level: 'Advanced' },
+      { name: 'Marketing', level: 'Intermediate' }
+    ],
+    location: 'Jabi',
+    type: 'Hybrid',
+  },
+  {
+    title: 'Security Supervisor',
+    description: 'A large corporate headquarters in the Central Business District is hiring a Security Supervisor to manage the onsite guard team.',
+    requiredSkills: [
+      { name: 'Security Management', level: 'Advanced' },
+      { name: 'Surveillance', level: 'Advanced' },
+      { name: 'Leadership', level: 'Intermediate' }
+    ],
+    location: 'Central Business District',
+    type: 'Onsite',
+  },
+  {
+    title: 'Customer Success Representative',
+    description: 'Energy company in Gwarinpa needs a customer-focused rep to handle inquiries and improve user satisfaction.',
+    requiredSkills: [
+      { name: 'Customer Support', level: 'Advanced' },
+      { name: 'Communication', level: 'Advanced' },
+      { name: 'CRM', level: 'Intermediate' }
+    ],
+    location: 'Gwarinpa',
+    type: 'Onsite',
+  },
+  {
+    title: 'Logistics Operations Officer',
+    description: 'Manage a fleet of delivery vans for a distribution hub in Idu Industrial Area. Strong organizational skills required.',
+    requiredSkills: [
+      { name: 'Logistics', level: 'Advanced' },
+      { name: 'Operations', level: 'Advanced' },
+      { name: 'Fleet Management', level: 'Intermediate' }
+    ],
+    location: 'Idu',
+    type: 'Onsite',
+  },
+  {
+    title: 'Pharmacy Technician',
+    description: 'Retail pharmacy in Kubwa is hiring. Must be licensed and have experience with prescription management and inventory.',
+    requiredSkills: [
+      { name: 'Pharmacy', level: 'Advanced' },
+      { name: 'Inventory Management', level: 'Intermediate' }
+    ],
+    location: 'Kubwa',
+    type: 'Onsite',
+  },
+  {
+    title: 'UI Developer (Vue.js)',
+    description: 'Design agency in Wuse 1 is looking for a Vue.js developer to build interactive dashboards for our government clients.',
+    requiredSkills: [
+      { name: 'Vue.js', level: 'Advanced' },
+      { name: 'JavaScript', level: 'Advanced' },
+      { name: 'CSS', level: 'Advanced' }
+    ],
+    location: 'Wuse 1',
+    type: 'Remote',
+  },
+  {
+    title: 'Graphic Designer',
+    description: 'Creative studio in Utako needs a versatile graphic designer for branding and social media content creation.',
+    requiredSkills: [
+      { name: 'Photoshop', level: 'Advanced' },
+      { name: 'Illustrator', level: 'Advanced' },
+      { name: 'Branding', level: 'Intermediate' }
+    ],
+    location: 'Utako',
+    type: 'Hybrid',
+  },
+  {
+    title: 'Barista & Cafe Supervisor',
+    description: 'New cafe in Maitama seeks a passionate barista. Must have experience with specialty coffee and basic management tasks.',
+    requiredSkills: [
+      { name: 'Coffee Making', level: 'Advanced' },
+      { name: 'Inventory Management', level: 'Intermediate' }
+    ],
+    location: 'Maitama',
+    type: 'Onsite',
+  },
+  {
+    title: 'System Administrator',
+    description: 'Manage the IT infrastructure for a government agency in Abuja. Experience with Linux servers and network security is required.',
+    requiredSkills: [
+      { name: 'Linux', level: 'Advanced' },
+      { name: 'Server Management', level: 'Advanced' },
+      { name: 'Network Security', level: 'Intermediate' }
+    ],
+    location: 'Abuja',
+    type: 'Onsite',
+  },
+  {
+    title: 'Warehouse Manager',
+    description: 'Oversee operations at a large distribution center in Lugbe. Must have experience with warehouse management systems (WMS).',
+    requiredSkills: [
+      { name: 'Warehouse Management', level: 'Advanced' },
+      { name: 'Staff Management', level: 'Advanced' },
+      { name: 'Inventory', level: 'Advanced' }
+    ],
+    location: 'Lugbe',
+    type: 'Onsite',
+  },
+  {
+    title: 'Tailoring Instructor',
+    description: 'Fashion vocational center in Karu needs an instructor for advanced tailoring and pattern making classes.',
+    requiredSkills: [
+      { name: 'Tailoring', level: 'Advanced' },
+      { name: 'Teaching', level: 'Advanced' },
+      { name: 'Pattern Making', level: 'Advanced' }
+    ],
+    location: 'Karu',
+    type: 'Onsite',
   }
 ];
 

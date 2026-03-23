@@ -36,7 +36,7 @@ export default function JobsPage() {
   const filteredJobs = jobs.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(search.toLowerCase()) || 
                           job.description.toLowerCase().includes(search.toLowerCase());
-    const matchesLocation = location === 'All Locations' || job.location === location;
+    const matchesLocation = location === 'All Areas' || job.location.toLowerCase().includes(location.toLowerCase());
     return matchesSearch && matchesLocation;
   });
 
@@ -48,7 +48,7 @@ export default function JobsPage() {
           <p className="text-xl text-gray-600 font-medium">Browse thousands of opportunities across FCT Abuja based on your skills.</p>
         </div>
 
-        <div className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100 mb-12 flex flex-col md:flex-row gap-4">
+        <form onSubmit={(e) => e.preventDefault()} className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100 mb-12 flex flex-col md:flex-row gap-4">
           <div className="flex-1 relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input 
@@ -76,10 +76,10 @@ export default function JobsPage() {
               <option>Remote</option>
             </select>
           </div>
-          <button className="bg-gray-900 text-white px-10 py-4 rounded-2xl font-black hover:bg-brand-600 transition-all shadow-xl shadow-gray-900/10 active:scale-95">
+          <button type="submit" className="bg-gray-900 text-white px-10 py-4 rounded-2xl font-black hover:bg-brand-600 transition-all shadow-xl shadow-gray-900/10 active:scale-95 text-center">
             Search
           </button>
-        </div>
+        </form>
 
         {loading ? (
           <div className="flex justify-center py-20">

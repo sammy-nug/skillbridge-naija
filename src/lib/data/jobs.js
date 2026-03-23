@@ -8,7 +8,7 @@ const jobs = [
       { name: 'React', level: 'Advanced' },
       { name: 'MongoDB', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Wuse 2',
     type: 'Hybrid',
   },
   {
@@ -19,7 +19,7 @@ const jobs = [
       { name: 'Power BI', level: 'Advanced' },
       { name: 'Excel', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Garki',
     type: 'Onsite',
   },
   {
@@ -29,7 +29,7 @@ const jobs = [
       { name: 'Figma', level: 'Advanced' },
       { name: 'User Research', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Maitama',
     type: 'Remote',
   },
   {
@@ -39,7 +39,7 @@ const jobs = [
       { name: 'Network Security', level: 'Advanced' },
       { name: 'Ethical Hacking', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Central Business District',
     type: 'Hybrid',
   },
 
@@ -73,7 +73,7 @@ const jobs = [
       { name: 'Plumbing', level: 'Advanced' },
       { name: 'Blueprint Reading', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Asokoro',
     type: 'Onsite',
   },
   {
@@ -83,7 +83,7 @@ const jobs = [
       { name: 'Solar Installation', level: 'Advanced' },
       { name: 'Electrical Wiring', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Gwarinpa',
     type: 'Onsite',
   },
   {
@@ -93,7 +93,7 @@ const jobs = [
       { name: 'Welding', level: 'Advanced' },
       { name: 'Metal Fabrication', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Idu',
     type: 'Onsite',
   },
   {
@@ -103,7 +103,7 @@ const jobs = [
       { name: 'POP Installation', level: 'Advanced' },
       { name: 'Interior Design', level: 'Beginner' }
     ],
-    location: 'Abuja',
+    location: 'Maitama',
     type: 'Onsite',
   },
   {
@@ -113,7 +113,7 @@ const jobs = [
       { name: 'Generator Repair', level: 'Advanced' },
       { name: 'Electrical Wiring', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Jabi',
     type: 'Onsite',
   },
 
@@ -126,7 +126,7 @@ const jobs = [
       { name: 'Fashion Design', level: 'Advanced' },
       { name: 'Pattern Making', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Wuse',
     type: 'Onsite',
   },
   {
@@ -146,7 +146,7 @@ const jobs = [
       { name: 'Leather Craft', level: 'Advanced' },
       { name: 'Shoe Making', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Garki',
     type: 'Onsite',
   },
 
@@ -158,7 +158,7 @@ const jobs = [
       { name: 'Phone Repair', level: 'Advanced' },
       { name: 'Computer Repair', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Banex Plaza',
     type: 'Onsite',
   },
   {
@@ -168,7 +168,7 @@ const jobs = [
       { name: 'AC Repair', level: 'Advanced' },
       { name: 'Auto Repair', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Apo',
     type: 'Onsite',
   },
   {
@@ -179,7 +179,7 @@ const jobs = [
       { name: 'Communication', level: 'Advanced' },
       { name: 'Customer Service', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Asokoro',
     type: 'Onsite',
   },
   {
@@ -189,7 +189,7 @@ const jobs = [
       { name: 'Motorcycle Riding', level: 'Advanced' },
       { name: 'Navigating', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Wuse 2',
     type: 'Onsite',
   },
   {
@@ -200,7 +200,7 @@ const jobs = [
       { name: 'Data Entry', level: 'Advanced' },
       { name: 'Organization', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Maitama',
     type: 'Onsite',
   },
   {
@@ -211,7 +211,7 @@ const jobs = [
       { name: 'Child Care', level: 'Advanced' },
       { name: 'Classroom Management', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Gwarinpa',
     type: 'Onsite',
   },
   {
@@ -222,7 +222,7 @@ const jobs = [
       { name: 'SEO', level: 'Intermediate' },
       { name: 'Social Media Management', level: 'Advanced' }
     ],
-    location: 'Abuja',
+    location: 'Jabi',
     type: 'Remote',
   },
   {
@@ -232,7 +232,7 @@ const jobs = [
       { name: 'Baking', level: 'Advanced' },
       { name: 'Food Safety', level: 'Intermediate' }
     ],
-    location: 'Abuja',
+    location: 'Lifecamp',
     type: 'Onsite',
   }
 ];
